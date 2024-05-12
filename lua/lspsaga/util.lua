@@ -75,7 +75,7 @@ end
 
 function M.feedkeys(key)
   local k = api.nvim_replace_termcodes(key, true, false, true)
-  api.nvim_feedkeys(k, 'x', false)
+  api.nvim_feedkeys(k, 'nx', false)
 end
 
 function M.scroll_in_float(bufnr, winid)
@@ -204,6 +204,16 @@ end
 
 function M.nvim_ten()
   return vim.version().minor >= 10
+end
+
+---sub c/ cpp header file path when in macos
+---@return string
+function M.sub_mac_c_header(fname)
+  local pos = fname:find('./usr/include')
+  if not pos then
+    return fname
+  end
+  return fname:sub(pos + 1)
 end
 
 return M

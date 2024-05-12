@@ -49,6 +49,7 @@ local default_config = {
     extend_gitsigns = false,
     only_in_cursor = true,
     max_height = 0.3,
+    cursorline = true,
     keys = {
       quit = 'q',
       exec = '<CR>',
@@ -142,6 +143,20 @@ local default_config = {
     },
   },
   callhierarchy = {
+    layout = 'float',
+    left_width = 0.2,
+    keys = {
+      edit = 'e',
+      vsplit = 's',
+      split = 'i',
+      tabe = 't',
+      close = '<C-c>k',
+      quit = 'q',
+      shuttle = '[w',
+      toggle_or_req = 'u',
+    },
+  },
+  typehierarchy = {
     layout = 'float',
     left_width = 0.2,
     keys = {
